@@ -403,7 +403,7 @@
   }
   
   .contact .row .info-container .share{
-    margin-top: 6rem;
+    margin-top: 4rem;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -424,6 +424,7 @@
     /* color: #fff; */
     text-align: center;
     margin-right: .3rem;
+    margin-top: 2rem;
   }
   
   .contact .row .info-container .share a:hover {
