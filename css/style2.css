@@ -1,0 +1,528 @@
+
+/* ---------- font : Poppins */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600;700&display=swap");
+
+
+/* ---------- global variables */
+:root {
+    --crimsonn: crimson;
+    --white: #ffffff;
+    --black: #0d0d0d;
+    /* #242424 */
+  }
+
+
+/* ---------- html reset */
+* {
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+    text-decoration: none; /*removing underline from links*/
+    font-family: 'Poppins', sans-serif;
+    
+    /* outline: none; */
+    /* border: none; */
+    /* text-transform: capitalize; */
+  }
+
+  html {
+    font-size: 62.5%; /*setting base root value, so the rem unit calculated based on this value only*/
+    overflow-x: hidden; /*disable horizontal scroll bar*/
+    /* scrollbar-color: rebeccapurple green; */ /*scroll bar formatting not working this way*/
+  }
+
+  /* ---------- base color of page */
+  body {
+    background: var(--black);
+    padding-bottom: 6.5rem;/*to make space for navbar*/
+  }
+
+
+  /* ---------- scroll bar formatting*/
+  html::-webkit-scrollbar {
+      width: 1rem;
+  }
+
+  html::-webkit-scrollbar-track {
+      background: var(--black);
+  }
+
+  html::-webkit-scrollbar-thumb {
+      /* #6058c9 -> in light mode */
+      background: var(--crimsonn);
+      border-radius: 5rem;
+  } 
+
+  /* ---------- main section, effect on all pages */
+  section {
+    padding: 4.5rem 6%;
+  }
+  /* --------- top heading of page */
+  .heading {
+    text-align: center;
+    font-size: 6vw;
+    color: #fff;
+    margin-bottom: 3rem;
+    text-transform: uppercase;
+  }
+  
+  .heading span {
+    text-transform: uppercase;
+    color: crimson;
+  }
+  
+  /* ---------- button */
+  .btn {
+    display: inline-block;
+    margin-top: 1rem;
+    border-radius: 5rem;
+    background: var(--crimsonn);
+    padding: .7rem;
+    font-size: 1.7rem;
+    color: var(--white);
+    padding-left: 2rem;
+  }
+  
+  /* button icon */
+  .btn i {
+    height: 4rem;
+    width: 4rem;
+    line-height: 4rem;
+    font-size: 1.7rem;
+    text-align: center;
+    background: var(--white);
+    color: var(--crimsonn);
+    border-radius: 50%;
+    margin-left: 1rem;
+    /* -webkit-transition: .2s linear; */
+    transition: .2s linear;
+  }
+  
+  .btn:hover i {
+    margin-left: 1.5rem;/*button icon move to right effect*/
+  }
+
+/* ---------- nav bar */
+.navbar {
+    /* move to bottom */
+    position: fixed;
+    bottom: 0;
+    /* left, right to fix the navbar full width horizontal alignment issue*/
+    left: 0;
+    right: 0;
+
+    display: flex;
+    z-index: 50; /*added as timeline class was coming over it*/
+    align-items: flex-end; /* fixed on hover issue: i.e, complete navbar was moving up onhoner instead of hovered <a> tag,
+                                Items are positioned at the end of the container*/
+  }
+  
+  .navbar a {
+    padding: 2rem;
+    font-size: 2rem;
+    background: #242424;
+    flex: 1;
+    color: #fff;
+    text-align: center;
+    transition: .2s linear;
+  }
+  
+  .navbar a i {
+    color: crimson;
+    padding-right: .5rem;
+  }
+  
+  .navbar a:hover {
+    background: crimson;
+    padding-bottom: 6rem;
+  }
+  
+  .navbar a:hover i {
+    color: #fff;
+  }
+
+/* ---------- home page css */
+.home {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 4rem;
+    min-height: calc(100vh - 6.5rem);
+  }
+  
+  .home .image {
+    flex: 1 1 42rem;
+    text-align: center;
+  }
+
+  .flip{
+    transform: scaleX(-1);
+  }
+  
+  .home .image img {
+    height: 50rem;
+    width: 50rem;
+    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+    animation: imageframeanimation 2.5s forwards;
+    animation-iteration-count: 1;
+  }
+
+  /* image animation */
+  @keyframes imageframeanimation {
+    0% { border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;/*bottom left*/
+    }
+    25% { 
+        border-radius: 70% 30% 30% 70% / 30% 30% 70% 70%;/*bottom right*/      
+    }
+    50%{
+        border-radius: 70% 30% 30% 70% / 70% 70% 30% 30%;/*top right*/
+    }
+    75%{
+        border-radius: 30% 70% 70% 30% / 70% 70% 30% 30%;/*top left*/
+    }
+    100% {
+        border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;/*bottom left*/
+    }
+  }
+  
+  
+  .home .content {
+    flex: 1 1 42rem;
+  }
+  
+  .home .content h3 {
+    color: #fff;
+    font-size: 4rem;
+    padding-bottom: .5rem;
+  }
+  
+  .home .content span {
+    font-size: 3rem;
+    color: crimson;
+    padding: .5rem 0;
+    display: block;
+  }
+  
+  .home .content p {
+    font-size: 1.5rem;
+    color: #aaa;
+    padding: 1rem 0;
+    line-height: 2;
+  }
+
+/* ----------  about*/
+.about .row {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+  }
+  
+  .about .row .info-container {
+    flex: 1 1 42rem;
+  }
+  
+  .about .row .info-container h1 {
+    font-size: 3rem;
+    color: #fff;
+    text-transform: uppercase;
+    padding-bottom: 1rem;
+  }
+  
+  .about .row .info-container .box-container {
+    padding: 1rem 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+  }
+  
+  .about .row .info-container .box-container .box {
+    flex: 1 1 20rem;
+  }
+  
+  .about .row .info-container .box-container .box h3 {
+    font-size: 1.7rem;
+    color: #fff;
+    padding: 1rem 0;
+    font-weight: normal;
+  }
+  
+  .about .row .info-container .box-container .box h3 span {
+    color: #aaa;
+    font-weight: lighter;
+  }
+  
+  .about .row .count-container {
+    flex: 1 1 42rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+  }
+  
+  .about .row .count-container .box {
+    flex: 1 1 max-content;
+    /* flex: 1 1 20rem; */
+    padding: 3rem 4rem;
+    border-radius: .5rem;
+    background: #1a1a1a;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.7);
+  }
+  .about .row .count-container .box:hover {
+    background: #fff;
+  }
+  .about .row .count-container .box:hover p {
+    color: #0d0d0d;
+  }
+  
+  .about .row .count-container .box h3 {
+    font-size: 5rem;
+    color: crimson;
+  }
+  
+  .about .row .count-container .box p {
+    font-size: 2rem;
+    color: #aaa;
+  }
+  
+  .skills .box-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+    gap: 1.5rem;
+  }
+  
+  .skills .box-container .box {
+    padding: 2rem;
+    text-align: center;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.7);
+    border-radius: .5rem;
+    background: #1a1a1a;
+  }
+  
+  .skills .box-container .box:hover {
+    background: #fff;
+  }
+  
+  .skills .box-container .box:hover h3 {
+    color: #0d0d0d;
+  }
+  
+  .skills .box-container .box img {
+    height: 7rem;
+    margin-bottom: 1rem;
+  }
+  
+  .skills .box-container .box h3 {
+    color: #fff;
+    font-size: 1.7rem;
+    font-weight: normal;
+    text-transform: uppercase;
+  }
+  
+  .timeline .box-container {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .timeline .box-container .box {
+    flex: 1 1 40rem;
+    margin-left: 2rem;
+    padding-top: 0;
+    padding-bottom: 0;
+    padding-left: 3.5rem;
+    padding-bottom: 3rem;
+    border-left: 0.1rem solid #aaa;
+    position: relative;
+  }
+  
+  .timeline .box-container .box i {
+    height: 4.5rem;
+    width: 4.5rem;
+    line-height: 4.5rem;
+    font-size: 1.7rem;
+    border-radius: 50%;
+    background: crimson;
+    color: #fff;
+    text-align: center;
+    position: absolute;
+    top: -1rem;
+    left: -2.5rem;
+  }
+  
+  .timeline .box-container .box span {
+    font-size: 1.7rem;
+    color: #fff;
+    border-radius: 5rem;
+    padding: .5rem 1.5rem;
+    background: #1a1a1a;
+  }
+  
+  .timeline .box-container .box h3 {
+    font-size: 2rem;
+    padding: 1rem 0;
+    color: #fff;
+    padding-top: 3rem;
+    font-weight: normal;
+  }
+  
+  .timeline .box-container .box p {
+    font-size: 1.5rem;
+    color: #aaa;
+    line-height: 2;
+  }
+  
+/* ---------- contact */
+.contact .row {
+    /* display: flex; */
+    align-items: center;
+    /* flex-wrap: wrap; */
+    /* gap: 2rem; */
+    margin-top: 4rem;
+  }
+  
+  .contact .row .info-container {
+    /* width: 40rem; */
+    margin: auto; /*CENTER*/
+    text-align: center;
+  }
+  
+  .contact .row .info-container h1 {
+    font-size: 3rem;
+    color: #fff;
+    padding-bottom: 1rem;
+  }
+  
+  .contact .row .info-container p {
+    font-size: 1.5rem;
+    line-height: 2;
+    color: #aaa;
+    padding: 1rem 0;
+  }
+  
+  .contact .row .info-container .box-container {
+    padding: 2rem 0;
+  }
+  
+  .contact .row .info-container .share{
+    margin-top: 6rem;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    /* to center flex boxes */
+    align-items: center;
+    justify-content: center;
+    column-gap: 2.5rem;
+
+  }
+  .contact .row .info-container .share a {
+    font-size: 5.5rem;
+    height: 10.5rem;
+    width: 10.5rem;
+    line-height: 10.5rem;
+    border-radius: 50%;
+    background: #242424;
+    color: crimson;
+    /* color: #fff; */
+    text-align: center;
+    margin-right: .3rem;
+  }
+  
+  .contact .row .info-container .share a:hover {
+    background: crimson;
+    color: #fff;
+  }
+
+
+/*  */
+
+.dark-mode-toggle{
+     color: aliceblue;
+ }
+ 
+ /* animation for typing */
+ .typing{
+    overflow: hidden;
+    border-right: .10em solid crimson;
+    white-space: nowrap;
+    animation: typing 2.5s forwards;
+    animation-iteration-count: 1;
+    /* animation-delay: 1000ms; */
+    font-size: 1.6rem;
+    /* opacity: 0; */
+    /* width: 0; */
+    /* text-align: center; */
+  }
+
+  /* out effect */
+  @keyframes typing {
+    0% { width: 0%;}
+    10% { 
+      width:0%
+    }
+    100% {
+      width: 100%;
+    }
+  }
+
+  /* in and out effect */
+   /* @keyframes typing {
+    0% { width: 0%
+    }
+    50% { 
+      width:100%
+    }
+    100% {
+      width: 0%;
+    }
+  }  */
+
+
+
+
+
+  @media (max-width: 1200px) {
+    html {
+      font-size: 55%;
+    }
+    section {
+      padding: 3rem 2rem;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .heading {
+      font-size: 12vw;
+    }
+    .navbar a i {
+      padding: 0;
+    }
+    .navbar a span {
+      display: none;
+    }
+    .navbar a:hover {
+      padding-bottom: 2rem;
+    }
+    .home {
+      text-align: center;
+      gap: 2rem;
+    }
+    .home .image img {
+      height: 30rem;
+      width: 30rem;
+    }
+    .home .content h3 {
+      font-size: 3rem;
+    }
+    .home .content span {
+      font-size: 2.5rem;
+    }
+    /* .contact .row form .inputBox input {
+      width: 100%;
+      margin-bottom: 1rem;
+    } */
+  }
+
+  @media (max-width: 450px) {
+    html {
+      font-size: 50%;
+    }
+  }
