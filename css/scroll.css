@@ -4,11 +4,11 @@
    z-index: 1;
    width: 100%;
    height: 2px;
-   background: rgb(83, 83, 83);
+   background: var(--base-backround-color);
  }
  
  #scrollProgressBar {
    height: 4px;
-   background: crimson;
+   background: var(--base-theme-color);
    width: 0%;
  }
