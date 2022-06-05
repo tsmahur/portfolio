@@ -73,6 +73,10 @@
       border-radius: 5rem;
   } 
 
+  .subscript{
+    font-size: 2.5rem;
+  }
+
   /* ---------- main section, effect on all pages */
   section {
     padding: 4.5rem 6%;
