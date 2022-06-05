@@ -27,7 +27,7 @@
     background-color: var(--base-theme-color);
     -webkit-transition: .4s;
     transition: .4s;
-    opacity: 0.5;
+    opacity: 0.25;
   }
   
   .slider:before {
