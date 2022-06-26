@@ -472,6 +472,7 @@
     text-align: center;
     margin-right: .3rem;
     margin-top: 2rem;
+    animation: shakeAnimation20deg 2.5s forwards
   }
   
   .contact .row .info-container .share a:hover {
@@ -538,6 +539,22 @@
     }
     75%{
       transform: rotate(-5deg);
+    }
+    100% {
+      transform: rotate(0deg);
+    }
+  }
+  @keyframes shakeAnimation20deg {
+    0% { transform: rotate(20deg);
+    }
+    25% { 
+      transform: rotate(-20deg);
+    }
+    50%{
+      transform: rotate(20deg);
+    }
+    75%{
+      transform: rotate(-20deg);
     }
     100% {
       transform: rotate(0deg);
