@@ -579,7 +579,9 @@
       display: none;
     }
     .navbar a:hover {
-      padding-bottom: 2rem;
+      padding-bottom: 3rem;
+      padding-top: 3rem;
+      border-radius: 25% 25% 0% 0%;
     }
     .home {
       text-align: center;
