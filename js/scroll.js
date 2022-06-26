@@ -9,6 +9,9 @@ function onScrollProgresssBarUpdate() {
    var scrolledPercent = (windowCurrentScrollPos / heightToScroll) * 100;
    document.getElementById("scrollProgressBar").style.width = scrolledPercent + "%";
 
+   //show/hide scroll button after certain percentange
+   showHideTopButtonBasedOnCurrentPositon(windowCurrentScrollPos);
+
    // console.log("---------------------------------------------------")
    // console.log("document.body.scrollTop.."+document.body.scrollTop)
    // console.log("document.documentElement.scrollTop.."+document.documentElement.scrollTop)
@@ -18,8 +21,31 @@ function onScrollProgresssBarUpdate() {
    // console.log("heightToScroll.."+heightToScroll) 
    // console.log("scrolledPercent.."+scrolledPercent)
 }
+
+function showHideTopButtonBasedOnCurrentPositon(windowCurrentScrollPos) {
+   if (windowCurrentScrollPos < 1000) {
+      document.getElementById("top-id").style.display = "none";
+   }
+   else if (windowCurrentScrollPos > 1000) {
+      document.getElementById("top-id").style.display = "inline";
+   }
+}
+
 function onScrollStickyNavBarDisableOnHamBurgerClick() {
    nav=document.querySelector('nav');
    // nav.classList.toggle('stickyNavbar',false);
    nav.classList.remove('stickyNavbar');
 }
+
+
+
+//scroll using button
+// document.getElementById("top-id-btn").addEventListener("click",scrollToTop());
+document.getElementById("top-id-btn").addEventListener("click",function (){
+   scrollToTop();
+});
+
+function scrollToTop(){
+   window.scrollTo({top: 0, behavior: 'smooth'});
+}
+

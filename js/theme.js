@@ -28,12 +28,17 @@ var currentMode = localStorage.getItem('mode-portfolio-current');
 // }
 
 //when device mode is changed then change the theme automatically
-window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
-    const modeToSet = e.matches ? "dark" : "light";
-    console.log("mode change using window.matchMedia('(prefers-color-scheme: dark)') event listner")
-    setMode(modeToSet)
-    // setModeCheckBox(modeToSet);
-});
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
+        // if(localStorage.getItem('sync-with-device-mode')==='true'){
+            const modeToSet = e.matches ? "dark" : "light";
+            console.log("mode change using window.matchMedia('(prefers-color-scheme: dark)') event listner")
+            setMode(modeToSet)
+            // setModeCheckBox(modeToSet);
+        // }else{
+        //     //device theme changed, but skipping because sync-with-device-mode is false
+        // }
+    });
+
 
 //setting mode using check box
 var checkbox = document.getElementById('color-mode');

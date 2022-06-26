@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/scroll.css">
     <link rel="stylesheet" href="css/toogleButton.css">
+    <link rel="stylesheet" href="css/topButton.css">
 
     <title>About Me</title>
 </head>
@@ -24,6 +25,17 @@
             <span class="slider round"></span>
         </label>
     </div>
+
+    <!-- <button onclick="openSettingsWindow()">Open Theme Settings</button> -->
+
+    <div id="top-id" class="top-button" title="Click to go to Top">
+        <!-- scroll using href, add to the top most element -->
+        <!-- <a href="#top"><i class="fas fa-home"></i> Top</a>  -->
+
+        <!-- scroll using javascript -->
+        <button id="top-id-btn">Top</button>
+    </div>
+    
 
     <nav class="navbar">
         <a href="index.html"> <i class="fas fa-home"></i> <span>Home</span> </a>
@@ -177,6 +189,20 @@
                 <span>2020 - Present</span>
                 <h3>Infosys</h3>
                 <p>Working as a Java,SpringBoot Backend Developer.Have work experience in Java 8/11 with Spring Boot framework as backend, Microservices, MongoDB/SQL as database. Also have the experience on frontend technologies like HTML, CSS, JavaScript, React, Angular.</p>
+                <ul>
+
+                    
+                    <!-- <li>Infosys Certified SpringBoot Developer</li>
+                    <li>Infosys Certified Java 8 Developer</li> -->
+                    <li>Migration project from monolithic RDBMS application to Microservices NoSQL
+                        Application. Read the different sources such as XML, Email, Excel, csv etc. files containing details from upstream and send it to Kafka in JSON format, different microservice pick the data and business logic is applied and store it in the MongoDB. RESTful API and WEB service created to handled business logic.</li>
+                    <li>Experience in generating Dynamic Excel, PDF in backend.</li>
+                    <li>Experience in generating Dynamic query, aggregations to fetch and update date in MongoDb using Java Code.</li>
+                    <li>Experience in LINUX deployment script (.sh) for testing server.</li>
+                    <li>Test Driven Development, Unit Testing of functionalities along with Code Quality check.</li>
+                    <li>Tools: IntelliJ, PostMan, Mongo Compass, Gitlab, ELK, Jenkins, JIRA, SonarQube.</li>
+                    <li>Technology: Java, SpringBoot, Microservices, Kafka, MongoDB, Git.</li>
+                </ul>
             </div>
         </div>
 
@@ -189,51 +215,124 @@
 
             <div class="box">
                 <i class="fas fa-rocket"></i>
+                <span>08/2021</span>
+                <h3>Video Stream Web App</h3>
+                <p>
+                    <ul>
+                        <li>Video streaming project which uses ReactJs frontend and consumes RESTful streaming APIs. Backend is developed with SpringBoot Web Flux (Reactive Programming) which continuously stream the video.</li>
+                        <li>Technology: ReactJs, SpringBoot.</li>
+                    </ul>
+                </p>
+            </div>
+
+            <div class="box">
+                <i class="fas fa-rocket"></i>
+                <span>08/2021</span>
+                <h3>TextUtils Web App & News App</h3>
+                <p>
+                    <ul>
+                        <li>Developed basic utility text operations like Capitalization, Space Remove. and
+                            consuming news App API. </li>
+                        <li>Technology: ReactJs.</li>
+                    </ul>
+                </p>
+            </div>
+            
+            <div class="box">
+                <i class="fas fa-rocket"></i>
                 <span>08/2019-06/2020</span>
                 <h3>Position Control of Hinges</h3>
-                <p>Movement of door/gate hinges is controlled using encoder and PID algorithm, controlled using Bluetooth through an app developed using MIT App Inventor 2.</p>
+                <p>Movement of door/gate hinges is controlled using encoder and PID algorithm, controlled using Bluetooth through an app developed using MIT App Inventor 2.
+                    <ul>
+                        <li>Developed the Mobile App</li>
+                        <li>Developed and implemented PID logic using code based on feedback from Electrical Motor Encoder.</li>
+                        <li>Calculated position, angle, direction, speed of the motor using interrupts signal</li>
+                        <li>Technology : Arduino Uno, Eagle CAD, MIT App Inventor 2, HC-05 bluetooth module</li>
+                    </ul>
+                </p>
             </div>
 
             <div class="box">
                 <i class="fas fa-rocket"></i>
                 <span>08/2018-04/2019</span>
                 <h3>ABU-Robocon 2019</h3>
-                <p>International Robotics Contest based on a theme given by MONGOLIA, Developed a quadruped robot fully autonomous.</p>
+                <p>International Robotics Contest based on a theme given by MONGOLIA, Developed a quadruped robot fully autonomous.
+                    <ul>
+                        <li>Technology : Arduino (Uno,Mega,Duo), Eagle CAD.</li>
+                    </ul>
+                </p>
             </div>
 
             <div class="box">
                 <i class="fas fa-rocket"></i>
                 <span>07/2018-02/2019</span>
                 <h3>Mitsubishi Electric Cup India</h3>
-                <p>Team Leader, Industrial based project, Developed an Automatic Guided Vehicle as a part of Self-Guided Retrieval System based on the theme " Digital Industry Through Smart Imagination".</p>
+                <p>Team Leader, Industrial based project, Developed an Automatic Guided Vehicle as a part of Self-Guided Retrieval System based on the theme " Digital Industry Through Smart Imagination".
+                
+                <ul>
+                    <li>Developed an Automatic Guided Vehicle as a part of Self Guided Retrieval System based on the theme " DIGITAL INDUSTRY THROUGH SMART IMAGINATION" given by Mitsubishi Electric Automation for the MECUP 2019 .</li>
+                    <li>Being a team leader my role is to manage the team and I worked on the automation based products provided by Mitsubishi Electric India.</li>
+                    <li>Have a industry ready experience on PLC (FX5U-32 MT/ES) , HMI (GS-2107-WTBD), Servo Amplifier (MR-JE-20A), Servo interfaced and programmed using Gx works 3 , GT Designer3 , MR configurator2 respectively.</li>
+                    <li>Technology : Gx works 3 , GT Designer3 , MR configurator2</li>
+                </ul>   
+            </p>
             </div>
 
             <div class="box">
                 <i class="fas fa-rocket"></i>
                 <span>04/2018</span>
                 <h3>RoboWar</h3>
-                <p>Developed a Weaponized robot for RoboWar, controlled using Bluetooth through an app developed using MIT App Inventor 2</p>
+                <p>Developed a Weaponized robot for RoboWar, controlled using Bluetooth through an app developed using MIT App Inventor 2
+                    <ul>
+                        <li>Developed the Mobile App</li>
+                        <li>Designed and manufactured the Electronic circuit.</li>
+                        <li>Technology : Arduino Uno, Eagle CAD, MIT App Inventor 2, HC-05 bluetooth module</li>
+                    </ul>
+                </p>
             </div>
 
             <div class="box">
                 <i class="fas fa-rocket"></i>
                 <span>08/2017-03/2018</span>
                 <h3>ABU-Robocon 2018 (AIR- 10th)</h3>
-                <p>International Robotics Contest based on a theme given by VIETNAM, developed autonomous and a manual robot, using technologies like image processing and advance line sensing.</p>
+                <p>International Robotics Contest based on a theme given by VIETNAM, developed autonomous and a manual robot, using technologies like image processing and advance line sensing.
+                <ul>
+                    <li>Robocon is an international Robotics Contest , conduct by Asia Pacific Broadcasting Unit (ABU) , in which a country of the union gives a theme based on which participating team need to make robots completing the task in the given time limit of 3 minutes.</li>
+                    <li>As a programmer I interfaces and program different hardware like Arduino, Raspberry pi, Motor driver, PS2(Remote control for bot), LSA 08 (line following sensor), encoders.</li>
+                    <li>As an Electrical designer I also designed the circuits, power distribution among the bot. I designed the PCBs and fabricate them using technologies like milling and etching. </li>
+                    <li>Had used CNC machine like SRM-20 (for PCB milling), Laser cutter machine.</li>
+                    <li>Technology : Arduino (Uno,Mega,Duo), Eagle CAD.</li>
+                </ul>   
+            </p>
             </div>
 
             <div class="box">
                 <i class="fas fa-rocket"></i>
                 <span>11/2017</span>
                 <h3>Intelligent Electric System</h3>
-                <p>Electrical consumption of load is monitored on a webserver and the load appliances can be controlled from the remote access. Automation and monitoring using IoT.</p>
+                <p>Electrical consumption of load is monitored on a webserver and the load appliances can be controlled from the remote access. Automation and monitoring using IoT.
+                    <ul>
+                        <li>Hosted the webserver on Arduino Uno and controlling the electrical devices based on the web request from client.</li>
+                        <li>Lock Appliances Remotely : Once this is enabled Appliances can not be switched ON/OFF.</li>
+                        <li>Measured Electrical Energy Meter live reading for Energy consumption.</li>
+                        <li>Live feedback of consumed and current load.</li>
+                        <li>Designed the Electronic circuit and system.</li>
+                        <li>Technology : Arduino Uno, ESP8266, MathWorks ThingSpeak, Eagle CAD.</li>
+                    </ul>
+                </p>
             </div>
 
             <div class="box">
                 <i class="fas fa-rocket"></i>
                 <span>06/2017</span>
                 <h3>WiFi Controlled Robotic Bot</h3>
-                <p>Locally hosted a server on a microcontroller and controlled movement of the Bot from a local website using the WiFi system.</p>
+                <p>Locally hosted a server on a microcontroller and controlled movement of the Bot from a local website using the WiFi system.
+                    <ul>
+                        <li>Local Network Setup using Arduino Uno.</li>
+                        <li>Capable of controlling the movement of Two wheeled bot.</li>
+                        <li>Technology : Arduino Uno, ESP8266. </li>
+                    </ul>
+                </p>
             </div>
 
         </div>
@@ -249,6 +348,9 @@
 
    <!-- theme color script file -->
    <script src="./js/theme.js"></script>
+
+
+   <script src="./js/setting.js"></script>
 
 </body>
 

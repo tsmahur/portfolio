@@ -3,6 +3,7 @@
     display: inline;
     position: fixed;
     top: 4px;
+    z-index: 1000; /*without this under timeline section this was not working*/
 }
 .switch {
     position: relative;
@@ -25,7 +26,6 @@
     right: 0;
     bottom: 0;
     background-color: var(--base-theme-color);
-    -webkit-transition: .4s;
     transition: .4s;
     opacity: 0.25;
   }
@@ -38,7 +38,6 @@
     left: 4px;
     bottom: 4px;
     background-color: var(--grey);
-    -webkit-transition: .4s;
     transition: .4s;
   }
   
