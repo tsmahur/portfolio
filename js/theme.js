@@ -11,8 +11,31 @@ var puprle_fade="#dddbf4";
 // var btn=document.getElementById('color-mode');
 // btn.addEventListener("click", switchMode);
 
-var checkbox = document.getElementById('color-mode');
+var r = document.querySelector(':root');
+var currentMode = localStorage.getItem('mode-portfolio-current');
+//-----------------------------------------------------------------------------------------------------
 
+//on page load, setting mode based on device theme
+// if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+//     console.log("window.matchMedia('(prefers-color-scheme: dark)') : ")
+//     console.log(window.matchMedia('(prefers-color-scheme: dark)'))
+//     setMode('dark');
+// }
+// else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
+//     console.log("window.matchMedia('(prefers-color-scheme: light)') : ")
+//     console.log(window.matchMedia('(prefers-color-scheme: light)'))
+//     setMode('light');
+// }
+
+//when device mode is changed then change the theme automatically
+window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
+    const newMode = e.matches ? "dark" : "light";
+    console.log("mode change using window.matchMedia('(prefers-color-scheme: dark)') event listner")
+    setMode(newMode)
+});
+
+//setting mode using check box
+var checkbox = document.getElementById('color-mode');
 checkbox.addEventListener('change', function() {
   if (this.checked) {
     setMode('light');
@@ -21,15 +44,14 @@ checkbox.addEventListener('change', function() {
   }
 });
 
-var r = document.querySelector(':root');
 
 //enable mode on all page by default on load
 // window.onload.apply(syncMode);
-syncMode();//----sycning mode every time when page is load i.e, script is executed
+syncThemeModeAndCheckBoxStatus();//----sycning mode every time when page is load i.e, script is executed
 
 
-function syncMode(){
-    var currentMode = localStorage.getItem('mode-portfolio-current');
+function syncThemeModeAndCheckBoxStatus(){
+    // var currentMode = localStorage.getItem('mode-portfolio-current');
     var modeToSet=currentMode!=null?currentMode:'dark'; //deciding the default mode
     // console.log("mode synced <<onload>>: currentMode from storage= "+currentMode)
     // console.log("modeToSet = "+modeToSet)
@@ -41,7 +63,7 @@ function syncMode(){
 
 //enable using toogle button
 function switchMode(){
-    var currentMode = localStorage.getItem('mode-portfolio-current');
+    // var currentMode = localStorage.getItem('mode-portfolio-current');
     var modeToSet=currentMode==='dark'?'light':'dark';
     // console.log("mode switch using <<button>> : currentMode from storage= "+currentMode)
     // console.log("modeToSet = "+modeToSet)
