@@ -29,9 +29,10 @@ var currentMode = localStorage.getItem('mode-portfolio-current');
 
 //when device mode is changed then change the theme automatically
 window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
-    const newMode = e.matches ? "dark" : "light";
+    const modeToSet = e.matches ? "dark" : "light";
     console.log("mode change using window.matchMedia('(prefers-color-scheme: dark)') event listner")
-    setMode(newMode)
+    setMode(modeToSet)
+    // setModeCheckBox(modeToSet);
 });
 
 //setting mode using check box
@@ -49,7 +50,6 @@ checkbox.addEventListener('change', function() {
 // window.onload.apply(syncMode);
 syncThemeModeAndCheckBoxStatus();//----sycning mode every time when page is load i.e, script is executed
 
-
 function syncThemeModeAndCheckBoxStatus(){
     // var currentMode = localStorage.getItem('mode-portfolio-current');
     var modeToSet=currentMode!=null?currentMode:'dark'; //deciding the default mode
@@ -58,7 +58,7 @@ function syncThemeModeAndCheckBoxStatus(){
     setMode(modeToSet);
 
     //also set the status of check box based on mode
-    checkbox.checked=modeToSet==='light'?true:false;
+    // setModeCheckBox(modeToSet);
 }
 
 //enable using toogle button
@@ -70,16 +70,21 @@ function switchMode(){
     setMode(modeToSet);
 }
 
-function setMode(currentMode) {
-    if (currentMode && currentMode === 'dark') {
+function setCheckBoxStatusBasedOnMode(modeToSet) {
+    checkbox.checked = modeToSet === 'light' ? true : false;
+}
+function setMode(modeToSet) {
+    if (modeToSet && modeToSet === 'dark') {
         localStorage.setItem('mode-portfolio-current', 'dark');
         enableDarkMode();
+        setCheckBoxStatusBasedOnMode(modeToSet);
     }
-    else if (currentMode && currentMode === 'light') {
+    else if (modeToSet && modeToSet === 'light') {
         localStorage.setItem('mode-portfolio-current', 'light');
         enableLightMode();
+        setCheckBoxStatusBasedOnMode(modeToSet);
     } else {
-        console.log(currentMode + ' Mode not supported!!');
+        console.log(modeToSet + ' Mode not supported!!');
     }
 }
 
