@@ -3,9 +3,12 @@ var crimsonn= "crimson";
 var white="#ffffff";
 var black="#0d0d0d";
 var grey="#aaa";
+var dark_grey="#545151";
 var grey_fade="#1a1a1a";
 var purple="#6058c9";
 var puprle_fade="#dddbf4";
+var purple_backdrop="230, 225, 245";
+var black_backdrop="35, 35, 35";
 
 // button for mode
 // var btn=document.getElementById('color-mode');
@@ -13,42 +16,42 @@ var puprle_fade="#dddbf4";
 
 var r = document.querySelector(':root');
 var currentMode = localStorage.getItem('mode-portfolio-current');
+var autoSyncDeviceMode = localStorage.getItem('sync-with-device-mode');
 //-----------------------------------------------------------------------------------------------------
 
 //on page load, setting mode based on device theme
-// if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-//     console.log("window.matchMedia('(prefers-color-scheme: dark)') : ")
-//     console.log(window.matchMedia('(prefers-color-scheme: dark)'))
-//     setMode('dark');
-// }
-// else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
-//     console.log("window.matchMedia('(prefers-color-scheme: light)') : ")
-//     console.log(window.matchMedia('(prefers-color-scheme: light)'))
-//     setMode('light');
-// }
+function syncWithCurrentDeviceMode() {
+    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        setMode('dark');
+    }
+    else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
+        setMode('light');
+    }
+}
 
 //when device mode is changed then change the theme automatically
     window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
-        // if(localStorage.getItem('sync-with-device-mode')==='true'){
+        if(autoSyncDeviceMode==null || autoSyncDeviceMode==='true'){ //autoSyncDeviceMode is not set OR autoSyncDeviceMode is true
             const modeToSet = e.matches ? "dark" : "light";
-            console.log("mode change using window.matchMedia('(prefers-color-scheme: dark)') event listner")
             setMode(modeToSet)
             // setModeCheckBox(modeToSet);
-        // }else{
-        //     //device theme changed, but skipping because sync-with-device-mode is false
-        // }
+        }else{
+            //device theme changed, but skipping because sync-with-device-mode is false
+        }
     });
 
 
 //setting mode using check box
 var checkbox = document.getElementById('color-mode');
-checkbox.addEventListener('change', function() {
-  if (this.checked) {
-    setMode('light');
-  } else {
-    setMode('dark');
-  }
-});
+if(checkbox){
+    checkbox.addEventListener('change', function() {
+    if (this.checked) {
+        setMode('light');
+    } else {
+        setMode('dark');
+    }
+    });
+}
 
 
 //enable mode on all page by default on load
@@ -76,7 +79,9 @@ function switchMode(){
 }
 
 function setCheckBoxStatusBasedOnMode(modeToSet) {
-    checkbox.checked = modeToSet === 'light' ? true : false;
+    if(checkbox){
+        checkbox.checked = modeToSet === 'light' ? true : false;
+    }
 }
 function setMode(modeToSet) {
     if (modeToSet && modeToSet === 'dark') {
@@ -97,13 +102,14 @@ function enableLightMode(){
     // console.log("light mode enabling...")
     var lightColorMap={
         "--base-theme-color":purple,//
+        "--base-theme-color-backdrop":purple_backdrop,
         "--base-theme2-color":black,//
         "--base-theme3-color":puprle_fade,//
         "--base-backround-color":white,//
         "--hover-color":black,//
         "--text-hover-color":white,//
         "--text-heading-color":black,//
-        "--text-content-color":grey
+        "--text-content-color":dark_grey
     }
     applyColorMap(lightColorMap);
 }
@@ -112,6 +118,7 @@ function enableDarkMode(){
     // console.log("dark mode enabling...")
     var darkColorMap={
         "--base-theme-color":crimsonn,
+        "--base-theme-color-backdrop":black_backdrop,
         "--base-theme2-color":white,
         "--base-theme3-color":grey_fade,
         "--base-backround-color":black,

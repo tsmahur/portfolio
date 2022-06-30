@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Settings - Beta Version</title>
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/toogleButton.css">
 
     <style>
         .mainBox-setting{
@@ -25,20 +24,19 @@
         Select setting :
         <br>
         <br>
-        <input type="checkbox" name="" id="setting-sync-device-checkbox">
-        Sync with device mode and Enable Auto switch mode based on device mode
+        <input type="checkbox" name="" id="setting-sync-device-checkbox-auto">
+        Enable Auto switch mode based on device mode
         <!-- Switch mode using Check box selection -->
         <br>
         <br>
+        <input type="radio" name="" id="setting-sync-device-checkbox-sync">
+        Sync with current device mode
         <button onclick="closeCurrentWindow()">Close Theme Settings</button>
     </div>
 
-    
-
-    <!-- theme color script file -->
-   <script src="./js/theme.js"></script>
-
    <!-- js for this setting Window only -->
    <script src="./js/settingWindow.js"></script>
+   <!-- <script type="module" src="./js/settingWindow.js"></script>  -->
+   
 </body>
 </html>

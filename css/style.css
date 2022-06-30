@@ -13,11 +13,13 @@
     --black: #0d0d0d;
     --grey:#aaa;
     --grey-fade:#1a1a1a;
-    --purple:#6058c9;
+    --purple:#6058c9; /*230, 225, 245*/
     --puprle_fade:#dddbf4;
+    --black_backdrop:rgb(35, 35, 35);
 
     /* dark mode, same color are added in javascript */
     --base-theme-color:var(--crimsonn); /*main theme color of page*/
+    --base-theme-color-backdrop:var(--black_backdrop);
     --base-theme2-color:var(--white); /*text, icon*/
     --base-theme3-color:var(--grey-fade); /*navbar*/
 
@@ -376,15 +378,50 @@
   .timeline .box-container .box {
     flex: 1 1 40rem;
     margin-left: 2rem;
-    padding-top: 0;
-    padding-bottom: 0;
-    padding-left: 3.5rem;
+    /* padding-left: 3.5rem; */
+    /* padding-top: 3rem; */
     padding-bottom: 3rem;
-    border-left: 0.1rem solid var(--text-content-color);
+    border-left: 0.15rem solid var(--text-content-color);
     position: relative;
+
+    /* background: rgba(var(--base-theme-color-backdrop), 0.7); */
+    /* backdrop-filter: blur(10px); */
+
+    /* border-bottom: 2rem solid var(--base-backround-color); */
+    /* border-top: 2rem solid var(--base-backround-color); */
+    transition: var(--theme-transitiont-time);
   }
+  .timeline .box-container .box .backdrop{
+    padding: 2.5rem 3rem 2.5rem 3rem;
+    position: relative;  /*by commenting this icon moved with respect to box instead of backdrop class*/
+    background: rgba(var(--base-theme-color-backdrop), 0.7);
+    /* backdrop-filter: blur(10px); */
+    transition: var(--theme-transitiont-time);
+  }
+  /* .timeline .box-container .box::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    background-color: rgba(176, 169, 169, 0.7);
+    backdrop-filter: blur(10px);
+    opacity: 0.3;
+  } */
+/* .container {
+    position: relative;
+}
+.container::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    background-color: var(--color);
+    opacity: 0.3;
+} */
   
-  .timeline .box-container .box i {
+  .timeline .box-container .box .backdrop i {
     height: 4.5rem;
     width: 4.5rem;
     line-height: 4.5rem;
@@ -396,28 +433,34 @@
     position: absolute;
     top: -1rem;
     left: -2.5rem;
+    transition: var(--theme-transitiont-time);
   }
   
-  .timeline .box-container .box span {
+  .timeline .box-container .box .backdrop span {
     font-size: 1.7rem;
     color: var(--text-heading-color);
     border-radius: 5rem;
     padding: .5rem 1.5rem;
     background: var(--base-theme3-color);
+    transition: var(--theme-transitiont-time);
   }
   
-  .timeline .box-container .box h3 {
+  .timeline .box-container .box .backdrop h3 {
     font-size: 2rem;
     padding: 1rem 0;
     color: var(--text-heading-color);
     padding-top: 3rem;
     font-weight: normal;
+    transition: var(--theme-transitiont-time);
   }
   
-  .timeline .box-container .box p,ul {
+  .timeline .box-container .box .backdrop p,ul {
     font-size: 1.5rem;
     color: var(--text-content-color);
     line-height: 2;
+  }
+  .timeline .box-container .box .backdrop ul {
+    padding-left: 3rem;
   }
   
 /* ---------- contact */
