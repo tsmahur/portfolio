@@ -23,7 +23,7 @@ function openSettingsWindow(){
       }, 500);
       //-------------------------------------------------------
 
-      console.log("----openSettingsWindow() method end---")
+    //   console.log("----openSettingsWindow() method end---")
 }
 
 // function closeSettingWindow(){

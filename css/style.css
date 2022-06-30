@@ -391,12 +391,18 @@
     /* border-top: 2rem solid var(--base-backround-color); */
     transition: var(--theme-transitiont-time);
   }
+  .timeline .box-container .box:last-child { 
+    padding-bottom: 0rem; /*removing the left border for last empty space on both work and project timelines*/
+    border-bottom: 0.3rem solid var(--text-content-color);
+    /* box-shadow: 0.35rem 0.35rem var(--base-theme-color); */
+  }
   .timeline .box-container .box .backdrop{
     padding: 2.5rem 3rem 2.5rem 3rem;
     position: relative;  /*by commenting this icon moved with respect to box instead of backdrop class*/
     background: rgba(var(--base-theme-color-backdrop), 0.7);
     /* backdrop-filter: blur(10px); */
     transition: var(--theme-transitiont-time);
+    /* box-shadow:0.35rem 0.35rem var(--base-theme-color) inset; */
   }
   /* .timeline .box-container .box::before {
     content: "";
