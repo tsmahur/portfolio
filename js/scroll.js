@@ -24,10 +24,10 @@ function onScrollProgresssBarUpdate() {
 
 function showHideTopButtonBasedOnCurrentPositon(windowCurrentScrollPos) {
    if (windowCurrentScrollPos < 1000) {
-      document.getElementById("top-id-btn").style.display = "none";
+      document.getElementById("top-id").style.display = "none";
    }
    else if (windowCurrentScrollPos > 1000) {
-      document.getElementById("top-id-btn").style.display = "inline";
+      document.getElementById("top-id").style.display = "inline";
    }
 }
 
