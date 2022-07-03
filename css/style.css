@@ -383,7 +383,7 @@
     padding-bottom: 3rem;
     border-left: 0.15rem solid var(--text-content-color);
     position: relative;
-
+    z-index: -1;
     /* background: rgba(var(--base-theme-color-backdrop), 0.7); */
     /* backdrop-filter: blur(10px); */
 

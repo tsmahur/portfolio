@@ -1,22 +1,27 @@
 .top-button{
     display: none;
     position: fixed;
-    bottom: 80px;
-    right: 6px;
+
+    bottom: 10%;
+    right: 3%;
+
+    width: 100px;
+    height: 100px;
+    border: none;
+    border-radius: 50%;
+
+    opacity: 0.65;
     text-decoration: none;
     cursor: pointer;
     color:var(--text-heading-color);
-    z-index: 1000; /*without this, it was under timeline section this was not working*/
+    background-color: var(--base-theme-color);
+
+    /* z-index: ; without this, it was under timeline section this was not working */
 }
 
-.top-button button{
-    background-color: var(--base-theme-color);
-    color: var(--text-heading-color);
-    opacity: 0.65;
-    border: none;
-    border-radius: 6px;
-    padding: 0.8rem 0.8rem;
-    cursor: pointer;
+.top-button:hover {
+    opacity: 1;
+    transition: opacity 0.3s ease-in-out;
 }
 
 @media (max-width: 768px) {
