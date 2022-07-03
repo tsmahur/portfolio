@@ -32,7 +32,8 @@
 
     /* dark and light mode is controlled from javascript */
 
-    --theme-transitiont-time:0.6s
+    --theme-transitiont-time:0.6s,
+    --hover-transitiont-time:0.3s
 
   }
 
@@ -81,6 +82,76 @@
   .subscript{
     font-size: 2.5rem;
   }
+  /* LOGO */
+  .logo{
+    /* position: absolute;
+    left:0;
+    top:0; */
+    /* transform: scale(0.75); */
+    text-decoration: none;
+    cursor: pointer;
+    /* display: inline; */
+    text-align: center;
+    transition: var(--theme-transitiont-time);
+  }
+  .logo svg{
+    height: 5.5rem;
+  }
+  .logo svg g{
+    fill:var(--base-theme-color);
+  }
+  /* .logo:hover{
+    transform: scale(3.75);
+    filter: invert(1);
+    transition: transform var(--theme-transitiont-time);
+  } */
+/* ---- */
+
+  /* ---- Text Scroll -----*/
+  .scroll-box {
+    height: 40px;/*for best result prefer this height to similar to the font of element on which this is applied*/
+    overflow: hidden;/*to hide the extra data*/
+    position: relative;
+    display: inline-block;
+  }
+  /* shadow effect for top on scroll-box */
+  .scroll-box::before {
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width: 100%;
+    content: '';
+    height: 15px;
+    position: absolute;
+    background: linear-gradient(180deg, var(--base-backround-color), rgba(246, 244, 244, 0));
+  }
+  /* shadow effect for bottom on scroll-box */
+  .scroll-box::after {
+    left: 0;
+    bottom: 0;
+    z-index: 1;
+    width: 100%;
+    content: '';
+    height: 15px;
+    position: absolute;
+    background: linear-gradient(180deg, rgba(246, 244, 244, 0), var(--base-backround-color));
+  }
+  .scroll-box ul {
+    margin: 0;
+    padding: 0;
+    animation: scrollUp 3s ease-in-out infinite normal;
+  }
+  .scroll-box ul li {
+    opacity: 1;
+    height: 40px;
+    /* padding: 10px;  */
+    list-style: none;
+  }
+  .scroll-box span{
+    padding: 0!important;/*resetting and overriding padding from span under content class*/
+  }
+ 
+
 
   /* ---------- main section, effect on all pages */
   section {
@@ -93,6 +164,8 @@
     color: var(--text-heading-color);
     margin-bottom: 3rem;
     text-transform: uppercase;
+    animation: expand .8s ease-in-out;
+    /* animation: expand 1.8s ease-in-out infinite; */
   }
   
   .heading span {
@@ -214,23 +287,6 @@
     animation-iteration-count: 1;
   }
 
-  /* image animation */
-  @keyframes imageframeanimation {
-    0% { border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;/*bottom left*/
-    }
-    25% { 
-        border-radius: 70% 30% 30% 70% / 30% 30% 70% 70%;/*bottom right*/      
-    }
-    50%{
-        border-radius: 70% 30% 30% 70% / 70% 70% 30% 30%;/*top right*/
-    }
-    75%{
-        border-radius: 30% 70% 70% 30% / 70% 70% 30% 30%;/*top left*/
-    }
-    100% {
-        border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;/*bottom left*/
-    }
-  }
   
   
   .home .content {
@@ -370,6 +426,17 @@
     text-transform: uppercase;
   }
   
+   /* Timeline Scroller */
+/* .timeline-handle{
+  border-radius: 0.8em;
+    width: 0.35em;
+    background-color: red;
+    height: 100%;
+    float: left;
+    z-index: 2;
+} */
+
+
   /* .timeline .box-container {
     display: flex;
     flex-wrap: wrap;
@@ -383,14 +450,19 @@
     padding-bottom: 3rem;
     border-left: 0.15rem solid var(--text-content-color);
     position: relative;
-    z-index: -1;
+    /* z-index: -1; */ /*-1 value was making hover effect undetectable*/
     /* background: rgba(var(--base-theme-color-backdrop), 0.7); */
     /* backdrop-filter: blur(10px); */
 
-    /* border-bottom: 2rem solid var(--base-backround-color); */
-    /* border-top: 2rem solid var(--base-backround-color); */
     transition: var(--theme-transitiont-time);
   }
+  .timeline .box-container .box:hover {
+    /* change with hover margin+borderleft == margin+borderleft ewithout hover*/
+    margin-left: 1.6rem; /*2+0.15-0.55=1.6*/
+    border-left: 0.55rem solid var(--text-content-color);
+    transition: var(--theme-transitiont-time);
+  }
+
   .timeline .box-container .box:last-child { 
     padding-bottom: 0rem; /*removing the left border for last empty space on both work and project timelines*/
     border-bottom: 0.3rem solid var(--text-content-color);
@@ -460,7 +532,7 @@
     transition: var(--theme-transitiont-time);
   }
   
-  .timeline .box-container .box .backdrop p,ul {
+  .timeline .box-container .box .backdrop p,.timeline .box-container .box .backdrop ul {
     font-size: 1.5rem;
     color: var(--text-content-color);
     line-height: 2;
@@ -556,6 +628,7 @@
     /* text-align: center; */
   }
 
+  /* START : Animations */
   /* out effect */
   @keyframes typing {
     0% { width: 0%;}
@@ -626,7 +699,41 @@
       transform: scale(1.075);
     }
   }
+    /* image animation */
+    @keyframes imageframeanimation {
+      0% { border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;/*bottom left*/
+      }
+      25% { 
+          border-radius: 70% 30% 30% 70% / 30% 30% 70% 70%;/*bottom right*/      
+      }
+      50%{
+          border-radius: 70% 30% 30% 70% / 70% 70% 30% 30%;/*top right*/
+      }
+      75%{
+          border-radius: 30% 70% 70% 30% / 70% 70% 30% 30%;/*top left*/
+      }
+      100% {
+          border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;/*bottom left*/
+      }
+    }
+    @keyframes scrollUp {
+      from {
+          transform: translateY(0);
+      }
+      to {
+          transform: translateY(-66%);
+      }
+    }
+    @keyframes expand {
+      from {
+        transform: scaleX(0);
+      }
+      to {
+        transform: scaleX(1);
+      }
+    }
 
+/* END : Animations */
 
   @media (max-width: 1200px) {
     html {
