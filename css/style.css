@@ -32,7 +32,7 @@
 
     /* dark and light mode is controlled from javascript */
 
-    --theme-transitiont-time:0.6s,
+    --theme-transitiont-time:0.6s;
     --hover-transitiont-time:0.3s
 
   }
@@ -60,6 +60,7 @@
   /* ---------- base color of page */
   body {
     background: var(--base-backround-color);
+    /* background: conic-gradient(red, orange, yellow, green, blue,red); *//*Add this to see magic*/
     padding-bottom: 6.5rem;/*to make space for navbar*/
     transition: var(--theme-transitiont-time);
   }
@@ -297,6 +298,7 @@
     color: var(--base-theme2-color);
     font-size: 4rem;
     padding-bottom: .5rem;
+    transition: var(--theme-transitiont-time);
   }
   
   .home .content span {
@@ -304,6 +306,7 @@
     color: var(--base-theme-color);
     padding: .5rem 0;
     display: block;
+    transition: var(--theme-transitiont-time);
   }
   
   .home .content p {
@@ -311,6 +314,7 @@
     color: var(--text-content-color);
     padding: 1rem 0;
     line-height: 2;
+    transition: var(--theme-transitiont-time);
   }
 
 /* ----------  about*/
