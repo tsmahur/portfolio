@@ -33,4 +33,25 @@ while (currentDate>=initialDate) {
 // console.log("countMonth%12 : "+countMonth%12)
 
 // exp.innerHTML= diffYearsFormatted+"+";
-exp.innerHTML= Math.floor(countMonth/12)+'<span class="subscript">y</span>'+(countMonth%12)+'<span class="subscript">m</span> +';
+// window.load = function() {
+//     monthCounter(); //executed once the script 
+//  };
+
+monthCounter(); //executing method to populate experience
+
+function monthCounter(){
+    let monthCoutner=0
+    let month=countMonth%12
+    var monthCoutnerInterval=setInterval(()=>{
+        
+        if(month==monthCoutner){
+            clearInterval(monthCoutnerInterval);
+        }else{
+            monthCoutner++;
+            exp.innerHTML= Math.floor(countMonth/12)+'<span class="subscript">y</span>'
+            +(monthCoutner)+'<span class="subscript">m</span> +';
+            //monthCoutner<9?`0${monthCoutner}`:monthCoutner
+        }
+    },90);
+}
+// exp.innerHTML= Math.floor(countMonth/12)+'<span class="subscript">y</span>'+(countMonth%12)+'<span class="subscript">m</span> +';
