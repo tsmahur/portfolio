@@ -7,6 +7,7 @@ var dark_grey="#545151";
 var grey_fade="#1a1a1a";
 var purple="#6058c9";
 var puprle_fade="#dddbf4";
+var puprle_fade_hover="#a5a3c6";
 var purple_backdrop="230, 225, 245";
 var black_backdrop="35, 35, 35";
 
@@ -107,6 +108,7 @@ function enableLightMode(){
         "--base-theme3-color":puprle_fade,//
         "--base-backround-color":white,//
         "--hover-color":black,//
+        "--box-hover-color":puprle_fade_hover,
         "--text-hover-color":white,//
         "--text-heading-color":black,//
         "--text-content-color":dark_grey
@@ -123,6 +125,7 @@ function enableDarkMode(){
         "--base-theme3-color":grey_fade,
         "--base-backround-color":black,
         "--hover-color":white,
+        "--box-hover-color":grey,
         "--text-hover-color":black,
         "--text-heading-color":white,
         "--text-content-color":grey
