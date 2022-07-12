@@ -23,8 +23,30 @@
     border-radius: 6px;
     padding: 0.8rem 0.8rem;
     cursor: pointer;
+
+    /* for animation */
+    overflow: hidden;
+    height: 42px;
+    width: 38px;
 }
 
+.top-button button ul{
+    animation: moveToTopAmnimation 1.3s ease-in-out;
+    animation-iteration-count: infinite;
+}
+.top-button button ul li{
+    padding-bottom: 1.5rem;
+}
+
+@keyframes moveToTopAmnimation {
+    /* 11,-30 */
+    0% {
+        transform: translateY(0px);
+    }
+    100% {
+        transform: translateY(-42px);/* height: 42px; of  .top-button button*/
+    }
+  }
 @media (max-width: 768px) {
     .top-button{
         bottom: 60px;

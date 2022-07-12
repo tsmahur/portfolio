@@ -27,6 +27,7 @@
     --hover-color:var(--white);
 
     --text-hover-color:var(--black);
+    --box-hover-color:var(--grey);
     --text-heading-color:var(--white);
     --text-content-color:var(--grey);
 
@@ -375,7 +376,7 @@
     box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.7);
   }
   .about .row .count-container .box:hover {
-    background: var(--hover-color);
+    background: var(--box-hover-color);
     animation: growAnimation 0.25s forwards;
   }
   .about .row .count-container .box:hover p {
@@ -407,7 +408,7 @@
   }
   
   .skills .box-container .box:hover {
-    background: var(--hover-color);
+    background: var(--box-hover-color);
     transition: background 0.3s ease;
     animation: growAnimation 0.25s forwards;
   }
